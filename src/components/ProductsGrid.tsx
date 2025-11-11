@@ -48,7 +48,7 @@ const ProductsGrid = () => {
         <button
           onClick={() => setPage((prev) => Math.max(prev - 1, 1))}
           disabled={!data?.links?.prev}
-          className="px-4 py-2 bg-blue-600 text-white rounded disabled:bg-gray-400"
+          className="px-4 py-2 bg-primary text-white rounded disabled:bg-gray-400"
         >
           Previous
         </button>
@@ -58,7 +58,7 @@ const ProductsGrid = () => {
         <button
           onClick={() => setPage((prev) => prev + 1)}
           disabled={!data?.links?.next}
-          className="px-4 py-2 bg-blue-600 text-white rounded disabled:bg-gray-400"
+          className="px-4 py-2 bg-primary text-white rounded disabled:bg-gray-400"
         >
           Next
         </button>

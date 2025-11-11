@@ -134,7 +134,7 @@ const CheckoutPage = () => {
               htmlFor="qris"
               className={`border p-4 rounded-md cursor-pointer flex flex-row ${
                 paymentMethod === "qris"
-                  ? "border-blue-600 ring-2 ring-blue-600"
+                  ? "border-primary ring-2 ring-primary"
                   : ""
               }`}
             >
@@ -160,7 +160,7 @@ const CheckoutPage = () => {
               htmlFor="postpaid"
               className={`border p-4 rounded-md flex flex-row cursor-pointer ${
                 paymentMethod === "postpaid"
-                  ? "border-blue-600 ring-2 ring-blue-600"
+                  ? "border-primary ring-2 ring-primary"
                   : ""
               }`}
             >
@@ -187,13 +187,13 @@ const CheckoutPage = () => {
           <button
             type="submit"
             disabled={checkoutMutation.isPending}
-            className="w-full bg-blue-600 text-white font-semibold py-3 rounded-md hover:bg-blue-700 transition-colors disabled:bg-gray-400"
+            className="w-full bg-primary text-white font-semibold py-3 rounded-md hover:bg-blue-700 transition-colors disabled:bg-gray-400"
           >
             {checkoutMutation.isPending ? "Placing Order..." : "Place Order"}
           </button>
           <Link
             href="/cart"
-            className="block text-center text-sm text-blue-600 hover:underline mt-2"
+            className="block text-center text-sm text-primary hover:underline mt-2"
           >
             Return to Cart
           </Link>

@@ -166,7 +166,7 @@ const RegisterPage = () => {
             <button
               type="submit"
               disabled={registerMutation.isPending}
-              className="w-full px-4 py-2 font-semibold text-white bg-blue-600 rounded-md hover:bg-blue-700 disabled:bg-gray-400"
+              className="w-full px-4 py-2 font-semibold text-white bg-primary rounded-md hover:bg-blue-700 disabled:bg-gray-400"
             >
               {registerMutation.isPending ? "Registering..." : "Register"}
             </button>
@@ -176,7 +176,7 @@ const RegisterPage = () => {
           Already have an account?{" "}
           <Link
             href="/login"
-            className="font-medium text-blue-600 hover:underline"
+            className="font-medium text-primary hover:underline"
           >
             Login here
           </Link>

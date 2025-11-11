@@ -77,7 +77,7 @@ const OrderDetailPage = () => {
   return (
     <div className="container mx-auto max-w-4xl p-4 my-8">
       <div className="mb-4">
-        <Link href="/orders" className="text-blue-600 hover:underline">
+        <Link href="/orders" className="text-primary hover:underline">
           &larr; Back to My Orders
         </Link>
       </div>
@@ -134,7 +134,7 @@ const OrderDetailPage = () => {
                 <div className="grow">
                   <Link
                     href={`/product/${product.id}`}
-                    className="font-semibold text-lg text-blue-600 hover:underline"
+                    className="font-semibold text-lg text-primary hover:underline"
                   >
                     {product.name}
                   </Link>

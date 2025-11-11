@@ -139,7 +139,7 @@ const CartPage = () => {
         <h1 className="text-3xl font-bold mb-4">Your cart is empty</h1>
         <Link
           href="/"
-          className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
+          className="px-4 py-2 bg-primary text-white rounded hover:bg-blue-700"
         >
           Start Shopping
         </Link>
@@ -232,7 +232,7 @@ const CartPage = () => {
             </div>
             <Link
               href="/checkout"
-              className="mt-6 w-full text-center bg-blue-600 text-white py-3 rounded-md font-semibold block hover:bg-blue-700"
+              className="mt-6 w-full text-center bg-primary text-white py-3 rounded-md font-semibold block hover:bg-blue-700"
             >
               Proceed to Checkout
             </Link>

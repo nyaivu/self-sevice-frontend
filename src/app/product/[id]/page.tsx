@@ -82,7 +82,7 @@ const ProductDetailPage = () => {
   return (
     <div className="container mx-auto max-w-4xl p-4 my-8">
       <div className="mb-4">
-        <Link href="/" className="text-blue-600 hover:underline">
+        <Link href="/" className="text-primary hover:underline">
           &larr; Back to products
         </Link>
       </div>
@@ -104,7 +104,7 @@ const ProductDetailPage = () => {
           {product.category && (
             <Link
               href={`/categories/${product.category.id}`} // Assuming you have a category page
-              className="text-blue-600 font-semibold"
+              className="text-primary font-semibold"
             >
               {product.category.name}
             </Link>
@@ -144,7 +144,7 @@ const ProductDetailPage = () => {
             <button
               onClick={handleAddToCart}
               disabled={addToCartMutation.isPending}
-              className="w-full bg-blue-600 text-white font-semibold py-3 rounded-md hover:bg-blue-700 transition-colors disabled:bg-gray-400"
+              className="w-full bg-primary text-white font-semibold py-3 rounded-md hover:bg-blue-700 transition-colors disabled:bg-gray-400"
             >
               {addToCartMutation.isPending
                 ? "Adding to cart..."

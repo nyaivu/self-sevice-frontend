@@ -60,7 +60,7 @@ const ProductItem: React.FC<ProductItemProps> = ({ product }) => {
           onClick={() => addToCartMutation.mutate()}
           // 8. Disable button while the API call is in progress
           disabled={addToCartMutation.isPending}
-          className="opacity-0 group-hover:opacity-100 transition-all aspect-square cursor-pointer bg-blue-600 rounded-full text-white px-2 py-1 hover:underline mt-2 block disabled:bg-gray-400 disabled:opacity-100"
+          className="opacity-0 group-hover:opacity-100 transition-all aspect-square cursor-pointer bg-primary rounded-full text-white px-2 py-1 hover:underline mt-2 block disabled:bg-gray-400 disabled:opacity-100"
         >
           {/* 9. Show a loader while pending, otherwise the icon */}
           {addToCartMutation.isPending ? (

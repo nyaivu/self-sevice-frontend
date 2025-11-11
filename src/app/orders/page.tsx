@@ -73,7 +73,7 @@ const OrdersPage = () => {
         <h1 className="text-3xl font-bold mb-4">You have no past orders</h1>
         <Link
           href="/"
-          className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
+          className="px-4 py-2 bg-primary text-white rounded hover:bg-blue-700"
         >
           Start Shopping
         </Link>
@@ -125,7 +125,7 @@ const OrdersPage = () => {
             <div className="p-4 bg-gray-50 border-t">
               <Link
                 href={`/orders/${order.id}`} // You'll create this page next
-                className="text-blue-600 font-semibold hover:underline"
+                className="text-primary font-semibold hover:underline"
               >
                 View Details
               </Link>
@@ -139,7 +139,7 @@ const OrdersPage = () => {
         <button
           onClick={() => setPage((prev) => Math.max(prev - 1, 1))}
           disabled={!paginatedOrders.links?.prev}
-          className="px-4 py-2 bg-blue-600 text-white rounded disabled:bg-gray-400"
+          className="px-4 py-2 bg-primary text-white rounded disabled:bg-gray-400"
         >
           Previous
         </button>
@@ -150,7 +150,7 @@ const OrdersPage = () => {
         <button
           onClick={() => setPage((prev) => prev + 1)}
           disabled={!paginatedOrders.links?.next}
-          className="px-4 py-2 bg-blue-600 text-white rounded disabled:bg-gray-400"
+          className="px-4 py-2 bg-primary text-white rounded disabled:bg-gray-400"
         >
           Next
         </button>

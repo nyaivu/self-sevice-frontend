@@ -40,7 +40,7 @@ const Navbar = () => {
   // 3. Hydration check: Wait for the store to rehydrate before rendering
   if (!_hasHydrated) {
     return (
-      <nav className="sticky bg-blue-600 top-0 inset-x-0 flex flex-row justify-between items-center px-4 py-2 z-50 h-16">
+      <nav className="sticky bg-primary top-0 inset-x-0 flex flex-row justify-between items-center px-4 py-2 z-50 h-16">
         {/* Render a placeholder or null to prevent mismatch */}
       </nav>
     );
@@ -51,7 +51,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="sticky bg-blue-600 text-white font-medium top-0 inset-x-0 flex flex-row justify-between items-center px-4 py-2 z-50">
+    <nav className="sticky bg-primary text-white font-medium top-0 inset-x-0 flex flex-row justify-between items-center px-4 py-2 z-50">
       <div className="font-medium">
         <Link href="/">
           <p>Canteen</p>
@@ -94,7 +94,7 @@ const Navbar = () => {
       </ul>
 
       {/* Mobile Menu Button */}
-      <div className="sm:hidden bg-blue-600">
+      <div className="sm:hidden bg-primary">
         <Hamburger
           rounded
           toggled={isOpen}
@@ -109,7 +109,7 @@ const Navbar = () => {
         style={{
           transform: isOpen ? "scaleY(100%)" : "scaleY(0)",
         }}
-        className={`bg-blue-600 fixed inset-x-0 top-12 h-auto sm:hidden sm:h-0 origin-top w-full flex flex-col items-start justify-center z-40 text-lg gap-2 p-4 rounded-b-lg transition-all duration-300`}
+        className={`bg-primary fixed inset-x-0 top-12 h-auto sm:hidden sm:h-0 origin-top w-full flex flex-col items-start justify-center z-40 text-lg gap-2 p-4 rounded-b-lg transition-all duration-300`}
       >
         <li className="w-full">
           <Link

@@ -143,7 +143,7 @@ const OrderSuccessPage = () => {
         <div className="flex flex-col sm:flex-row gap-4">
           <Link
             href="/orders"
-            className="w-full text-center px-4 py-3 bg-blue-600 text-white rounded-md font-semibold hover:bg-blue-700 transition"
+            className="w-full text-center px-4 py-3 bg-primary text-white rounded-md font-semibold hover:bg-blue-700 transition"
           >
             View My Orders
           </Link>

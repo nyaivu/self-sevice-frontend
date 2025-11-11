@@ -88,7 +88,7 @@ const LoginPage = () => {
             <button
               type="submit"
               disabled={loginMutation.isPending}
-              className="w-full px-4 py-2 font-semibold text-white bg-blue-600 rounded-md hover:bg-blue-700 disabled:bg-gray-400"
+              className="w-full px-4 py-2 font-semibold text-white bg-primary rounded-md hover:bg-blue-700 disabled:bg-gray-400"
             >
               {loginMutation.isPending ? "Logging in..." : "Login"}
             </button>
@@ -98,7 +98,7 @@ const LoginPage = () => {
           Don&apos;t have an account?{" "}
           <Link
             href="/register"
-            className="font-medium text-blue-600 hover:underline"
+            className="font-medium text-primary hover:underline"
           >
             Register here
           </Link>
