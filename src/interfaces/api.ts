@@ -6,6 +6,7 @@ export interface User {
   email: string;
   email_verified_at: string | null;
   type: "postpaid" | "general";
+  role: "admin" | "member";
   created_at: string;
   updated_at: string;
 }

@@ -51,7 +51,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="sticky bg-primary text-white font-medium top-0 inset-x-0 flex flex-row justify-between items-center px-4 py-2 z-50">
+    <nav className="sticky bg-primary text-white font-medium top-0 inset-x-0 flex flex-row justify-between items-center px-4 md: py-2 z-50">
       <div className="font-medium">
         <Link href="/">
           <p>Canteen</p>

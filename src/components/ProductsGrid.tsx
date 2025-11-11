@@ -5,8 +5,11 @@ import { useState } from "react";
 import ProductItem from "./ProductItem";
 import { apiGetProducts } from "@/services/apiService"; // 1. Import from apiService
 import { PaginatedProductResponse } from "@/interfaces/api"; // 2. Import the correct response type
+import { useSessionStore } from "@/stores/sessionStore";
 
 const ProductsGrid = () => {
+  const { role } = useSessionStore();
+
   // 3. Add state for pagination
   const [page, setPage] = useState(1);
 
@@ -31,19 +34,19 @@ const ProductsGrid = () => {
   }
 
   return (
-    <section className="flex flex-col gap-4 p-4">
+    <section className="flex flex-col gap-4 p-4 md:">
       <div className="flex flex-row justify-between">
-        <h2 className="font-bold text-3xl">Products</h2>
+        <h2 className="font-bold text-3xl">Products {role}</h2>
       </div>
-      <div className="flex flex-col items-start md:grid grid-cols-4 grid-flow-row gap-4">
-        {/* 7. Map over data.data (the array is nested) */}
+      <div className="flex flex-col items-start md:grid grid-cols-3 grid-flow-row gap-4">
+        {/* Map over data.data (the array is nested) */}
         {data?.data?.map((product) => (
-          // 8. Use product.id for the key
+          // Use product.id for the key
           <ProductItem key={product.id} product={product} />
         ))}
       </div>
 
-      {/* 9. Add Pagination Controls */}
+      {/* Add Pagination Controls */}
       <div className="flex flex-row justify-between items-center mt-4">
         <button
           onClick={() => setPage((prev) => Math.max(prev - 1, 1))}

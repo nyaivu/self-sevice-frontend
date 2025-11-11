@@ -23,7 +23,7 @@ const LoginPage = () => {
     onSuccess: (data) => {
       // On success, save session and redirect
       toast.success("Login successful!");
-      setSession({ accessToken: data.token, role: data.user.type });
+      setSession({ accessToken: data.token, role: data.user.role });
       router.push("/"); // Redirect to homepage
     },
     onError: (error) => {
