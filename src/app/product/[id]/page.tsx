@@ -9,8 +9,11 @@ import { formatCurrency } from "@/utils/formatCurrency";
 import { toast } from "react-hot-toast";
 import Image from "next/image";
 import Link from "next/link";
+import { useSessionStore } from "@/stores/sessionStore";
 
 const ProductDetailPage = () => {
+  const isLoggedIn = useSessionStore((state) => state.isLoggedIn);
+
   const params = useParams();
   const id = params.id as string; // Get the [id] from the URL
 
@@ -117,40 +120,42 @@ const ProductDetailPage = () => {
             {product.description ?? "No description available."}
           </p>
 
-          <div className="border-t pt-4">
-            {/* Quantity Selector */}
-            <div className="flex items-center gap-4 mb-4">
-              <label htmlFor="quantity" className="font-semibold">
-                Quantity:
-              </label>
-              <div className="flex items-center border rounded-md">
-                <button
-                  onClick={handleDecrease}
-                  className="px-4 py-2 text-lg font-bold"
-                >
-                  -
-                </button>
-                <span className="px-5 py-2 border-x">{quantity}</span>
-                <button
-                  onClick={handleIncrease}
-                  className="px-4 py-2 text-lg font-bold"
-                >
-                  +
-                </button>
+          {isLoggedIn && (
+            <div className="border-t pt-4">
+              {/* Quantity Selector */}
+              <div className="flex items-center gap-4 mb-4">
+                <label htmlFor="quantity" className="font-semibold">
+                  Quantity:
+                </label>
+                <div className="flex items-center border rounded-md">
+                  <button
+                    onClick={handleDecrease}
+                    className="px-4 py-2 text-lg font-bold"
+                  >
+                    -
+                  </button>
+                  <span className="px-5 py-2 border-x">{quantity}</span>
+                  <button
+                    onClick={handleIncrease}
+                    className="px-4 py-2 text-lg font-bold"
+                  >
+                    +
+                  </button>
+                </div>
               </div>
-            </div>
 
-            {/* Add to Cart Button */}
-            <button
-              onClick={handleAddToCart}
-              disabled={addToCartMutation.isPending}
-              className="w-full bg-primary text-white font-semibold py-3 rounded-md hover:bg-blue-700 transition-colors disabled:bg-gray-400"
-            >
-              {addToCartMutation.isPending
-                ? "Adding to cart..."
-                : "Add to Cart"}
-            </button>
-          </div>
+              {/* Add to Cart Button */}
+              <button
+                onClick={handleAddToCart}
+                disabled={addToCartMutation.isPending}
+                className="w-full bg-primary text-white font-semibold py-3 rounded-md hover:bg-blue-700 transition-colors disabled:bg-gray-400"
+              >
+                {addToCartMutation.isPending
+                  ? "Adding to cart..."
+                  : "Add to Cart"}
+              </button>
+            </div>
+          )}
         </div>
       </div>
     </div>

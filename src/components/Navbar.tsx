@@ -62,19 +62,25 @@ const Navbar = () => {
       <ul
         className={`hidden origin-top w-full sm:flex flex-row items-center justify-end z-40 gap-4 rounded-b-lg transition-all duration-300`}
       >
-        <li>
-          <Link
-            className="w-full flex flex-row items-center gap-2"
-            href="/orders"
-          >
-            <p>Orders</p>
-          </Link>
-        </li>
-        <li>
-          <Link href="/cart" className="flex flex-row gap-1">
-            Cart
-          </Link>
-        </li>
+        {isLoggedIn && (
+          <li>
+            <Link
+              className="w-full flex flex-row items-center gap-2"
+              href="/orders"
+            >
+              <p>Orders</p>
+            </Link>
+          </li>
+        )}
+
+        {isLoggedIn && (
+          <li>
+            <Link href="/cart" className="flex flex-row gap-1">
+              Cart
+            </Link>
+          </li>
+        )}
+
         {/* 4. Conditional Login/Logout for Desktop */}
         {isLoggedIn ? (
           <li>
@@ -111,52 +117,58 @@ const Navbar = () => {
         }}
         className={`bg-primary fixed inset-x-0 top-12 h-auto sm:hidden sm:h-0 origin-top w-full flex flex-col items-start justify-center z-40 text-lg gap-2 p-4 rounded-b-lg transition-all duration-300`}
       >
-        <li className="w-full">
-          <Link
-            className="w-full flex flex-row items-center gap-2"
-            href="/orders"
-            onClick={handleMobileLinkClick}
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={1.5}
-              stroke="currentColor"
-              className="size-6"
+        {isLoggedIn && (
+          <li className="w-full">
+            <Link
+              className="w-full flex flex-row items-center gap-2"
+              href="/orders"
+              onClick={handleMobileLinkClick}
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M3.75 6A2.25 2.25 0 0 1 6 3.75h2.25A2.25 2.25 0 0 1 10.5 6v2.25a2.25 2.25 0 0 1-2.25 2.25H6a2.25 2.25 0 0 1-2.25-2.25V6ZM3.75 15.75A2.25 2.25 0 0 1 6 13.5h2.25a2.25 2.25 0 0 1 2.25 2.25V18a2.25 2.25 0 0 1-2.25 2.25H6A2.25 2.25 0 0 1 3.75 18v-2.25ZM13.5 6a2.25 2.25 0 0 1 2.25-2.25H18A2.25 2.25 0 0 1 20.25 6v2.25A2.25 2.25 0 0 1 18 10.5h-2.25a2.25 2.25 0 0 1-2.25-2.25V6ZM13.5 15.75a2.25 2.25 0 0 1 2.25-2.25H18a2.25 2.25 0 0 1 2.25 2.25V18A2.25 2.25 0 0 1 18 20.25h-2.25A2.25 2.25 0 0 1 13.5 18v-2.25Z"
-              />
-            </svg>
-            <p>Orders</p>
-          </Link>
-        </li>
-        <li className="w-full">
-          <Link
-            className="w-full flex flex-row items-center gap-2"
-            href="/cart"
-            onClick={handleMobileLinkClick}
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={1.5}
-              stroke="currentColor"
-              className="size-6"
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1.5}
+                stroke="currentColor"
+                className="size-6"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M3.75 6A2.25 2.25 0 0 1 6 3.75h2.25A2.25 2.25 0 0 1 10.5 6v2.25a2.25 2.25 0 0 1-2.25 2.25H6a2.25 2.25 0 0 1-2.25-2.25V6ZM3.75 15.75A2.25 2.25 0 0 1 6 13.5h2.25a2.25 2.25 0 0 1 2.25 2.25V18a2.25 2.25 0 0 1-2.25 2.25H6A2.25 2.25 0 0 1 3.75 18v-2.25ZM13.5 6a2.25 2.25 0 0 1 2.25-2.25H18A2.25 2.25 0 0 1 20.25 6v2.25A2.25 2.25 0 0 1 18 10.5h-2.25a2.25 2.25 0 0 1-2.25-2.25V6ZM13.5 15.75a2.25 2.25 0 0 1 2.25-2.25H18a2.25 2.25 0 0 1 2.25 2.25V18A2.25 2.25 0 0 1 18 20.25h-2.25A2.25 2.25 0 0 1 13.5 18v-2.25Z"
+                />
+              </svg>
+              <p>Orders</p>
+            </Link>
+          </li>
+        )}
+
+        {isLoggedIn && (
+          <li className="w-full">
+            <Link
+              className="w-full flex flex-row items-center gap-2"
+              href="/cart"
+              onClick={handleMobileLinkClick}
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z"
-              />
-            </svg>
-            <p>Cart</p>
-          </Link>
-        </li>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1.5}
+                stroke="currentColor"
+                className="size-6"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z"
+                />
+              </svg>
+              <p>Cart</p>
+            </Link>
+          </li>
+        )}
+
         {/* 5. Conditional Login/Logout for Mobile */}
         {isLoggedIn ? (
           <li className="w-full">
